@@ -5,13 +5,30 @@
   "name": "Skyblocker",
   "description": "Hypixel Skyblock Mod",
   "authors": ["xMrVizzy", "d3dx9", "LifeIsAParadox"],
-  "contributors": ["ExternalTime", "Zailer43", "TacoMonkey", "KonaeAkira", "Fix3dll", "null2264", "HyperSoop", "edgarogh", "TheColdPot", "Julienraptor01", "ADON15c", "catandA", "kevinthegreat1", "AzureAaron", "msg-programs", "lantice3720"],
+  "contributors": [
+    "ExternalTime",
+    "Zailer43",
+    "TacoMonkey",
+    "KonaeAkira",
+    "Fix3dll",
+    "null2264",
+    "HyperSoop",
+    "edgarogh",
+    "TheColdPot",
+    "Julienraptor01",
+    "ADON15c",
+    "catandA",
+    "kevinthegreat1",
+    "AzureAaron",
+    "msg-programs",
+    "lantice3720"
+  ],
   "contact": {
     "homepage": "https://hysky.de",
     "sources": "https://github.com/SkyblockerMod/Skyblocker",
     "issues": "https://github.com/SkyblockerMod/Skyblocker/issues"
   },
-  "license": "GNU LGPLv3",
+  "license": "LGPL-3.0-only",
   "icon": "assets/skyblocker/icon.png",
   "environment": "client",
   "entrypoints": {
@@ -35,10 +52,13 @@
     "skyblocker.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.21",
+    "fabricloader": ">=0.14.22",
     "fabric-api": ">=0.86.0",
     "cloth-config2": "*",
     "minecraft": "~1.20"
+  },
+  "suggests": {
+    "modmenu": "*"
   },
   "conflicts": {
     "immediatelyfast": "<=1.1.26+1.20.1"

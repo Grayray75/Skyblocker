@@ -1,21 +1,22 @@
-<img height="150" src="https://hysky.de/skyblocker.png" alt="skyblocker"/>
+<img height="128" src="https://hysky.de/skyblocker.png" alt="skyblocker"/>
 
-## Skyblocker
+# Skyblocker
 
-[![modrinth statistic](https://img.shields.io/modrinth/dt/skyblocker-liap?color=00AF5C&label=Download&labelColor=cecece00AF5C&logo=modrinth)](https://modrinth.com/mod/skyblocker-liap)
-[![github statistic](https://img.shields.io/github/downloads/SkyblockerMod/skyblocker/total?labelColor=cecece&color=000000&label=Download&logo=github&logoColor=black)](https://github.com/SkyblockerMod/Skyblocker/releases/latest)
+[![Modrinth downloads](https://img.shields.io/modrinth/dt/skyblocker-liap?color=00AF5C&label=Download&labelColor=cecece00AF5C&logo=modrinth)](https://modrinth.com/mod/skyblocker-liap)
+[![GitHub downloads](https://img.shields.io/github/downloads/SkyblockerMod/skyblocker/total?labelColor=cecece&color=000000&label=Download&logo=github&logoColor=black)](https://github.com/SkyblockerMod/Skyblocker/releases/latest)
 [![Build Beta](https://img.shields.io/github/actions/workflow/status/SkyblockerMod/Skyblocker/beta.yml?labelColor=cecece&label=beta&logo=github&logoColor=black)](https://github.com/SkyblockerMod/Skyblocker/actions/workflows/beta.yml)
 [![Discord](https://img.shields.io/discord/879732108745125969?logo=discord&labelColor=cecece&color=7289DA&label=)](https://discord.com/invite/aNNJHQykck)
-[![modrinth statistic](https://img.shields.io/badge/buy%20me%20coffee-skyblocker?color=434B57&logo=kofi)](https://ko-fi.com/wohlhabend)
+[![Ko-fi](https://img.shields.io/badge/buy%20me%20coffee-skyblocker?color=434B57&logo=kofi)](https://ko-fi.com/wohlhabend)
 [![Translated](https://translate.hysky.de/widgets/Skyblocker/-/skyblocker/svg-badge.svg)](https://translate.hysky.de/projects/Skyblocker/skyblocker/)
 
 Hypixel Skyblock Mod for Minecraft 1.17.x + 1.18.x + 1.19.x + 1.20.x
 
 Installation guide is [here](https://github.com/SkyblockerMod/Skyblocker/wiki/installation) or use our [Modpack](https://modrinth.com/modpack/skyblocker-modpack)
+
 ## Features
 
 <details open>
-<summary>open</summary>
+<summary>Feature list:</summary>
 
 * Bars: Health and absorption, Mana, Defense, XP (moving fancy bars)
 * Hide Messages: Ability Cooldown, Heal, AOTE, Implosion, Molten Wave, Teleport Pad Messages
@@ -66,13 +67,13 @@ ___
 
 ## Commands
 
-|        command        |                option                 | comment                                    |
-|:---------------------:|:-------------------------------------:|:-------------------------------------------|
-|  /skyblocker config   |                                       | open config menu (modMenu not needed)      |
-|  /skyblocker options  |                                       | open config menu (modMenu not needed)      |
-|    /skyblocker hud    | dwarven / dungeonmap / titleContainer | move dwarven, dungeonmap or titleContainer |
+| Command               |                Option                 | Comment                                    |
+| :-------------------- | :-----------------------------------: | :----------------------------------------- |
+| /skyblocker config    |                                       | open config menu (modMenu not needed)      |
+| /skyblocker options   |                                       | open config menu (modMenu not needed)      |
+| /skyblocker hud       | dwarven / dungeonmap / titleContainer | move dwarven, dungeonmap or titleContainer |
 | /skyblocker shortcuts |                                       | add/edit shortcuts                         |
-|  /skyblocker custom   |  renameItem /  armorTrim / dyeColor   | Item and Armour customisation              |
+| /skyblocker custom    |  renameItem /  armorTrim / dyeColor   | item and armour customisation              |
 
 ---
 
@@ -104,23 +105,23 @@ information.
 ## Credits
 
 | [<img alt="Kraineff" src="https://github.com/Kraineff.png" width="100">](https://github.com/Kraineff) | [<img alt="d3dx9" src="https://github.com/d3dx9.png" width="100">](https://github.com/d3dx9) | [<img alt="LifeIsAParadox" src="https://github.com/LifeIsAParadox.png" width="100">](https://github.com/LifeIsAParadox) | [<img alt="ExternalTime" src="https://github.com/ExternalTime.png" width="100">](https://github.com/ExternalTime) |
-|:-----------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------:|
+| :---------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: |
 |                                [Kraineff](https://github.com/Kraineff)                                |                              [d3dx9](https://github.com/d3dx9)                               |                                   [LifeIsAParadox](https://github.com/LifeIsAParadox)                                   |                                  [ExternalTime](https://github.com/ExternalTime)                                  |
 
 | [<img alt="Zailer43" src="https://github.com/Zailer43.png" width="100">](https://github.com/Zailer43) | [<img alt="TacoMonkey11" src="https://github.com/TacoMonkey11.png" width="100">](https://github.com/TacoMonkey11) | [<img alt="KonaeAkira" src="https://github.com/KonaeAkira.png" width="100">](https://github.com/KonaeAkira) | [<img alt="Fix3dll" src="https://github.com/Fix3dll.png" width="100">](https://github.com/Fix3dll) |
-|:-----------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------:|
+| :---------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------: |
 |                                [Zailer43](https://github.com/Zailer43)                                |                                  [TacoMonkey11](https://github.com/TacoMonkey11)                                  |                                 [KonaeAkira](https://github.com/KonaeAkira)                                 |                               [Fix3dll](https://github.com/Fix3dll)                                |
 
 | [<img alt="ADON15c" src="https://github.com/ADON15c.png" width="100">](https://github.com/ADON15c) | [<img alt="TheColdPot" src="https://github.com/TheColdPot.png" width="100">](https://github.com/TheColdPot) | [<img alt="Julienraptor01" src="https://github.com/Julienraptor01.png" width="100">](https://github.com/Julienraptor01) | [<img alt="MiraculixxT" src="https://github.com/MiraculixxT.png" width="100">](https://github.com/MiraculixxT) |
-|:--------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------:|
+| :------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------: |
 |                               [ADON15c](https://github.com/ADON15c)                                |                                 [TheColdPot](https://github.com/TheColdPot)                                 |                                   [Julienraptor01](https://github.com/Julienraptor01)                                   |                                 [MiraculixxT](https://github.com/MiraculixxT)                                  |
 
 | [<img alt="catandA" src="https://github.com/catandA.png" width="100">](https://github.com/catandA) | [<img alt="kevinthegreat1" src="https://github.com/kevinthegreat1.png" width="100">](https://github.com/kevinthegreat1) | [<img alt="AzureAaron" src="https://github.com/AzureAaron.png" width="100">](https://github.com/AzureAaron) | [<img alt="msg-programs" src="https://github.com/msg-programs.png" width="100">](https://github.com/msg-programs) |
-|:--------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------:|
+| :------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: |
 |                               [catandA](https://github.com/catandA)                                |                                   [kevinthegreat1](https://github.com/kevinthegreat1)                                   |                                 [AzureAaron](https://github.com/AzureAaron)                                 |                                  [msg-programs](https://github.com/msg-programs)                                  |
 
 | [<img alt="lantice3720" src="https://github.com/lantice3720.png" width="100">](https://github.com/lantice3720) | [<img alt="lantice3720" src="https://github.com/koloiyolo.png" width="100">](https://github.com/koloiyolo) | [<img alt="lantice3720" src="https://github.com/Futuremappermydud.png" width="100">](https://github.com/Futuremappermydud) |
-|:--------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------:|
+| :------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |
 |                                 [lantice3720](https://github.com/lantice3720)                                  |                                 [koloiyolo](https://github.com/koloiyolo)                                  |                                 [Futuremappermydud](https://github.com/Futuremappermydud)                                  |
 
 ### Translators
