@@ -20,7 +20,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
-          go-version: '1.20'
+          go-version: "1.20"
 
       - uses: actions/cache@v3
         with:
@@ -39,7 +39,7 @@ jobs:
           OUTPUT="\`\`\`diff
           $OUTPUT
           \`\`\`"
-          
+
           JSON_PAYLOAD='{
           "content": "<@&1134566053138145330>",
           "embeds": [
@@ -55,5 +55,5 @@ jobs:
           ],
           "attachments": []
           }'
-          
+
           curl -H "Content-Type: application/json" --data-binary "$JSON_PAYLOAD" "${{ secrets.DISCORD_TRANSLATE_WEBHOOK }}"

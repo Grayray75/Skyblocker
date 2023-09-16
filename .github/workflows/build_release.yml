@@ -1,28 +1,20 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Build Release
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
   release:
     types: [created]
   workflow_dispatch:
 
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
-          distribution: 'microsoft'
-          java-version: '17'
+          distribution: "temurin"
+          java-version: "17"
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
@@ -41,13 +33,13 @@ jobs:
         run: |
           CHANGELOG=$(sed '/___/Q' CHANGELOG.md)
           CHANGELOG=$(echo "$CHANGELOG" | sed 1d)
-          
+
           CHANGELOGtmp="${CHANGELOG//'%'/'%25'}"
           CHANGELOGtmp="${CHANGELOGtmp//$'\n'/'%0A'}"
           CHANGELOGtmp="${CHANGELOGtmp//$'\r'/'%0D'}"
-          
+
           echo "::set-output name=changelog::$CHANGELOGtmp"
-          
+
           echo "Changelog:\n$CHANGELOG"
 
           changelog="${CHANGELOG}"
@@ -56,7 +48,7 @@ jobs:
 
           # Calculate the number of characters to delete
           delete_chars=$((${#changelog} + 350 - 2000 - 15))
-          
+
           # Check if delete_chars is greater than 0
           if [ $delete_chars -gt 0 ]; then
 
@@ -83,15 +75,15 @@ jobs:
 
               # Format the modified_changelog by removing "@" characters and enclosing URLs in "<>"
               # modified_changelog=$(echo "$modified_changelog" | sed -e 's/@//g' -e 's|https\?://[^[:space:]]*|<\0>|g')
-          
+
           # Store the modified_changelog in the CHANGELOG variable
           CHANGELOG=$(echo -n "$modified_changelog")
           fi
-          
+
           CHANGELOG="${CHANGELOG//'%'/'%25'}"
           CHANGELOG="${CHANGELOG//$'\n'/'%0A'}"
           CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
-          
+
           echo "::set-output name=changelog_discord::$CHANGELOG"
 
       - uses: actions/github-script@v6
@@ -129,13 +121,13 @@ jobs:
           OUTPUT="
           <@&1134565945482948638>
           ## Skyblocker ${{ steps.version_tag.outputs.value }}
-          
+
           ${{ steps.read_changelog.outputs.changelog_discord }}
-          
+
           :inbox_tray: Download latest version on Modrinth or Github:
           <:modrinth:900697862206287882> ${{ steps.modrinth.outputs.url }}
           <:github:900697885706952725> ${{ steps.uploadrelease.outputs.url }}
-          
+
           https://hysky.de/"
 
           curl -H "Content-Type: application/json" -d '{"content":"'"${OUTPUT//$'\n'/\\n}"'", "flags": 4}' "${{ secrets.DISCORD_WEBHOOK }}"
