@@ -3,8 +3,6 @@ package me.xmrvizzy.skyblocker.skyblock.cooldown;
 import me.xmrvizzy.skyblocker.events.ClientPlayerBlockBreakEvent;
 import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.FishingRodItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Hand;
@@ -24,11 +22,12 @@ public class ItemCooldowns {
 
     public static void init() {
         ClientPlayerBlockBreakEvent.AFTER.register(ItemCooldowns::afterBlockBreak);
-        UseItemCallback.EVENT.register(ItemCooldowns::interact);
+        UseItemCallback.EVENT.register(ItemCooldowns::onItemInteract);
     }
 
     public static void afterBlockBreak(BlockPos pos, PlayerEntity player) {
         String usedItemId = getItemId(player.getMainHandStack());
+        if (usedItemId == null) return;
 
         if (usedItemId.equals(JUNGLE_AXE_ID)) {
             if (!isItemOnCooldown(JUNGLE_AXE_ID)) {
@@ -42,7 +41,7 @@ public class ItemCooldowns {
         }
     }
 
-    private static TypedActionResult<ItemStack> interact(PlayerEntity player, World world, Hand hand) {
+    private static TypedActionResult<ItemStack> onItemInteract(PlayerEntity player, World world, Hand hand) {
         String usedItemId = getItemId(player.getMainHandStack());
 
         if (usedItemId.equals(GRAPPLING_HOOK_ID) && player.fishHook != null) {
