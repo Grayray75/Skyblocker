@@ -1,6 +1,6 @@
-package me.xmrvizzy.skyblocker.mixin;
+package me.xmrvizzy.skyblocker.mixin.events;
 
-import me.xmrvizzy.skyblocker.skyblock.cooldown.ItemCooldowns;
+import me.xmrvizzy.skyblocker.events.ClientPlayerBlockBreakEvent;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerInteractionManager;
 import net.minecraft.util.math.BlockPos;
@@ -19,6 +19,6 @@ public class ClientPlayerInteractionManagerMixin {
 
     @Inject(method = "breakBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/Block;onBroken(Lnet/minecraft/world/WorldAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;)V"))
     public void blockBreak(BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
-        ItemCooldowns.afterBlockBreak(this.client.player);
+        ClientPlayerBlockBreakEvent.AFTER.invoker().afterBlockBreak(pos, this.client.player);
     }
 }

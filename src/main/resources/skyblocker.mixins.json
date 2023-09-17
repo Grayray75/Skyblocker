@@ -8,7 +8,6 @@
     "ArmorTrimMixin",
     "BatEntityMixin",
     "ClientPlayerEntityMixin",
-    "ClientPlayerInteractionManagerMixin",
     "ClientPlayNetworkHandlerMixin",
     "DrawContextMixin",
     "DyeableItemMixin",
@@ -33,7 +32,8 @@
     "accessor.RecipeBookWidgetAccessor",
     "accessor.ScreenAccessor",
     "accessor.WorldRendererAccessor",
-    "accessor.DrawContextInvoker"
+    "accessor.DrawContextInvoker",
+    "events.ClientPlayerInteractionManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
