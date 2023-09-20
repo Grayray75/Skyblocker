@@ -134,21 +134,6 @@ public abstract class DrawContextMixin {
         }
     }
 
-    @org.spongepowered.asm.mixin.injection.Inject(method = "drawItemInSlot(Lnet/minecraft/client/font/TextRenderer;Lnet/minecraft/item/ItemStack;IILjava/lang/String;)V",
-        at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;isItemBarVisible()Z", shift = At.Shift.BEFORE))
-    private void skyblocker$renderCooldownBar(@Arg TextRenderer textRenderer, ItemStack stack, int x, int y, String countOverride, CallbackInfo ci) {
-        if (Utils.isOnSkyblock() && ItemCooldowns.isItemOnCooldown(stack)) {
-            ItemCooldownEntry cooldownEntry = ItemCooldowns.getItemCooldownEntry(stack);
-
-            int i = cooldownEntry.getItemBarStep();
-            int j = cooldownEntry.getItemBarColor();
-            int k = x + 2;
-            int l = y + 13;
-            this.fill(RenderLayer.getGuiOverlay(), k, l, k + 13, l + 2, -16777216);
-            this.fill(RenderLayer.getGuiOverlay(), k, l, k + i, l + 1, j | 0xFF000000);
-        }
-    }
-
     @ModifyExpressionValue(method = "drawItemInSlot(Lnet/minecraft/client/font/TextRenderer;Lnet/minecraft/item/ItemStack;IILjava/lang/String;)V",
         at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/ItemCooldownManager;getCooldownProgress(Lnet/minecraft/item/Item;F)F"))
     private float skyblocker$renderItemCooldown(float cooldownProgress, @Local ItemStack stack) {
