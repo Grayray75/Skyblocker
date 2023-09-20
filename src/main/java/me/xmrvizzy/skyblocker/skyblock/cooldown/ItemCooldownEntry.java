@@ -25,7 +25,7 @@ public class ItemCooldownEntry {
     }
 
     public int getItemBarStep() {
-        return Math.round(13.0F - getRemainingCooldownPercent() * 13.0F);
+        return Math.round(13.0F - this.getRemainingCooldownPercent() * 13.0F);
     }
 
     public int getItemBarColor() {

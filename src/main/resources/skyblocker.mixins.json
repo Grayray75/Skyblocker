@@ -26,13 +26,13 @@
     "WorldRendererMixin",
     "YggdrasilServicesKeyInfoMixin",
     "accessor.BeaconBlockEntityRendererInvoker",
+    "accessor.DrawContextInvoker",
     "accessor.FrustumInvoker",
     "accessor.HandledScreenAccessor",
     "accessor.PlayerListHudAccessor",
     "accessor.RecipeBookWidgetAccessor",
     "accessor.ScreenAccessor",
     "accessor.WorldRendererAccessor",
-    "accessor.DrawContextInvoker",
     "events.ClientPlayerInteractionManagerMixin"
   ],
   "injectors": {

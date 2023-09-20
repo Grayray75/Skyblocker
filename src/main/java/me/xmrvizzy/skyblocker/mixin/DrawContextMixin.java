@@ -1,5 +1,6 @@
 package me.xmrvizzy.skyblocker.mixin;
 
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.llamalad7.mixinextras.sugar.ref.LocalRef;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -133,8 +134,9 @@ public abstract class DrawContextMixin {
         }
     }
 
-    @org.spongepowered.asm.mixin.injection.Inject(method = "Lnet/minecraft/client/gui/DrawContext;drawItemInSlot(Lnet/minecraft/client/font/TextRenderer;Lnet/minecraft/item/ItemStack;IILjava/lang/String;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;isItemBarVisible()Z", shift = At.Shift.BEFORE))
-    private void skyblocker$renderCooldownBar(TextRenderer textRenderer, ItemStack stack, int x, int y, String countOverride, CallbackInfo ci) {
+    @org.spongepowered.asm.mixin.injection.Inject(method = "drawItemInSlot(Lnet/minecraft/client/font/TextRenderer;Lnet/minecraft/item/ItemStack;IILjava/lang/String;)V",
+        at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;isItemBarVisible()Z", shift = At.Shift.BEFORE))
+    private void skyblocker$renderCooldownBar(@Arg TextRenderer textRenderer, ItemStack stack, int x, int y, String countOverride, CallbackInfo ci) {
         if (Utils.isOnSkyblock() && ItemCooldowns.isItemOnCooldown(stack)) {
             ItemCooldownEntry cooldownEntry = ItemCooldowns.getItemCooldownEntry(stack);
 
@@ -145,5 +147,15 @@ public abstract class DrawContextMixin {
             this.fill(RenderLayer.getGuiOverlay(), k, l, k + 13, l + 2, -16777216);
             this.fill(RenderLayer.getGuiOverlay(), k, l, k + i, l + 1, j | 0xFF000000);
         }
+    }
+
+    @ModifyExpressionValue(method = "drawItemInSlot(Lnet/minecraft/client/font/TextRenderer;Lnet/minecraft/item/ItemStack;IILjava/lang/String;)V",
+        at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/ItemCooldownManager;getCooldownProgress(Lnet/minecraft/item/Item;F)F"))
+    private float skyblocker$renderItemCooldown(float cooldownProgress, @Local ItemStack stack) {
+        if (Utils.isOnSkyblock() && ItemCooldowns.isItemOnCooldown(stack)) {
+            return ItemCooldowns.getItemCooldownEntry(stack).getRemainingCooldownPercent();
+        }
+
+        return cooldownProgress;
     }
 }
