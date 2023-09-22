@@ -4,9 +4,13 @@ import me.xmrvizzy.skyblocker.config.SkyblockerConfig;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Locale;
+
 public class DungeonChestProfitTest {
     @Test
     void testProfitText() {
+        Locale.setDefault(new Locale("en", "US"));
+
         SkyblockerConfig.DungeonChestProfit config = new SkyblockerConfig.DungeonChestProfit();
         Assertions.assertEquals("literal{ 0}[style={color=dark_gray}]", DungeonChestProfit.getProfitText(0, false, config.neutralThreshold, config.neutralColor.formatting, config.profitColor.formatting, config.lossColor.formatting, config.incompleteColor.formatting).toString());
         Assertions.assertEquals("literal{ 0}[style={color=blue}]", DungeonChestProfit.getProfitText(0, true, config.neutralThreshold, config.neutralColor.formatting, config.profitColor.formatting, config.lossColor.formatting, config.incompleteColor.formatting).toString());
